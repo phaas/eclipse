@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <link rel="stylesheet" href="deck.js/core/deck.core.css">
+        <link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+        <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+        <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+        <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+        <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+        <link rel="stylesheet" href="deck.js/extensions/scale/deck.scale.css">
+        <link rel="stylesheet" href="deck.js/themes/style/swiss.css">
+        <link rel="stylesheet" href="deck.js/themes/transition/horizontal-slide.css">
+
+        <link rel="stylesheet" href="css/rainbow.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body class="deck-container">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+        <section class="slide">
+            <h2>Eclipse</h2>
+            <b>Keyboard Shortcuts &amp; other Nice Things</b>
+        </section>
+
+        <section class="slide">
+            <h2>Let's start..</h2>
+            <ul>
+                <li>Create a new project (<code>Ctrl + N</code>)</li>
+                <li>Type <code>java</code> into the filter</li>
+                <li>Select <b>Java Project</b></li>
+                <li>Give it a name...</li>
+                <li><b>Finish</b></li>
+            </ul>
+        </section>
+
+        <section class="slide" id="create-class">
+            <h2>Create a class</h2>
+            <ul>
+                <li>New File (<code>Ctrl+N</code>)</li>
+                <li>Type <code>class</code> and hit <b>Enter</b> (once or twice)</li>
+                <li>Give it a name.. say "Main"</li>
+                <li>Optionally: pick a package.
+                    <ul>
+                        <li>Use the accessibility shortcuts to select the field: <code>alt + k</code></li>
+                        <li>Let's call it <Code>runner</Code></li>
+                    </ul>
+                </li>
+                <li><b>Enter</b> to close the dialog</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="generate-main">
+            <h2>Generate a <code>main</code> method</h2>
+            <ul>
+                <li>Position the cursor anywhere whithin the class</li>
+                <li>Type <code>main</code></li>
+                <li>Press <code>Ctrl+Space</code> to get suggestions</li>
+                <li>Choose the <code>main method</code> template
+                    <ul>
+                        <li>Use the arrow keys to move between suggestions</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide" id="content-suggest">
+            <h2>Use basic content suggest (auto complete)</h2>
+            <ul>
+                <li>Press <code>Ctrl + Space</code> anywhere to get a list of variables, methods and other objects in your current scope</li>
+                <li>Eclipse recognizes upper-case letters as you type and matches it to variables, methods, classes, ...</li>
+            </ul>
+
+<pre><code>public static void main(String[] args) {
+		String firstPart = "Hello";
+		String secondPart = "World";
+}</code></pre>
+
+            <ul>
+                <li>Type <code>System.out.println(fP</code> and press <code>Ctrl + Space</code></li>
+                <li><code>fP</code> completes as <code><strong>f</strong>irst<strong>P</strong>art</code></li>
+                <li><code>sP</code> completes as <code><strong>s</strong>econd<strong>P</strong>art</code></li>
+                <li><code>AIOOBE</code> completes as <code>ArrayIndexOutOfBoundsException</code> (really!)</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="open-types-resources">
+            <h2>Opening Types and Resources</h2>
+            <ul>
+                <li>Eclipse knows two basic objects:
+                    <ul>
+                        <li><strong>Types</strong> - Basically Java classes, somewhere in your project, or in a
+                            <code>.jar</code> file on your project's build path. Find these with <code>Ctrl + Shift + T</code></li>
+                        <li><strong>Resources</strong> - Files within your project. This does not look insideof archives/jars.
+                            Find these with <code>Ctrl + Shift + R</code></li>
+                    </ul>
+                </li>
+
+                <h3>Examples</h3>
+                <ul>
+                    <li>A java class from the SDK: <code>Ctrl+Shift+T</code> and typing <code>FiInStr</code> matches the class <code>FileInputStream</code></li>
+                    <li>A file: <code>Ctrl+Shift+R</code> and typing <code>*.java</code> matches <code>Main.java</code></li>
+                </ul>
+
+                <b>Eclipse lets you mix upper &amp; lower case letters. You can only type the upper-case letters in
+                    the type that you're looking for or add lower-case letters as needed to limit the number of suggestions</b>
+            </ul>
+        </section>
+
+        <section class="slide" id="launching">
+            <h2>Launching your application (or test)</h2>
+
+            <ul>
+                <li>Right-click in the editor, select <code>Run As</code> then <code>Java Application</code>. This works if the file in the editor has a <code>main</code> method.</li>
+                <li>Without using the mouse: Press <code>Alt + Shift + X</code> to bring up the launch menu, then type <code>x</code> to choose <code>Java Application</code>.
+                    <ul>
+                        <li>No need to wait for the launch menu to show up.. Type as fast as you want!</li>
+                    </ul>
+                </li>
+                <li>This also works for launching <code>JUnit Tests</code>: <code>Alt + Shift + X, T</code></li>
+                <li>Want to launch the app / test in <strong>Debug mode</strong>? Use <code>Alt + Shift + D</code> (<strong>D</strong>ebug) instead of <code>Alt + Shift + X</code> (E<strong>x</strong>ecute)</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="relaunching">
+            <h2>Relaunching an application (or test)</h2>
+
+            <ul>
+                <li>Need to rerun the last program or test?
+                    <ul>
+                        <li><code>Ctrl + F11</code> to <strong>Run</strong></li>
+                        <li><code>F11</code> to <strong>Debug</strong></li>
+                    </ul>
+                </li>
+                <li><strong>WARNING:</strong> By default, Eclipse uses a very annoying setting that tries to
+                    <em>guess</em> what you're trying to run! Let's fix this so that Eclipse always relaunches the last
+                    program that you ran, no matter what you're looking at in the editor now.
+                    <ul>
+                        <li><code>Window</code> -&gt; <code>Preferences</code> -&gt; <code>Run/Debug</code> -&gt; <code>Launching</code></li>
+                    </ul>
+                    <img src="img/launch-configuration.png" />
+                </li>
+                <li>Good news: This also fixes the behavior of the <code>Launch</code> and <code>Debug</code> buttons in the toolbar!
+                    <img src="img/launch-button.png" />
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide" id="magic-find-anything">
+            <h2>Finding <em>any</em> action in Eclipse</h2>
+            <ul>
+                <li>Using the menu to get to the preferences isn't fun.. but there's a shortcut!</li>
+                <li><code>Ctrl + 3</code> = <strong>Find Anything!</strong></li>
+                <li>Type the name of any <strong>action</strong>, <strong>dialog</strong>, <strong>view</strong>, <strong>perspective</strong>, <strong>preference</strong>, ...</li>
+                <li>For example: Press <code>Ctrl + 3</code> and type <code>Launching</code> to find the preferences pane used in the previous slide.</li>
+                <li>Type <code>breakpoints</code> to open the breakpoints view</li>
+                <li>Type <code>debug</code> to find the Debug perspective</li>
+
+            </ul>
+
+        </section>
+
+        <section class="slide">
+            <h1>Here</h1>
+        </section>
+
+
+        <!-- Begin extension snippets. Add or remove as needed. -->
+
+        <!-- deck.navigation snippet -->
+        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+        <!-- deck.status snippet -->
+        <p class="deck-status">
+            <span class="deck-status-current"></span>
+            /
+            <span class="deck-status-total"></span>
+        </p>
+
+        <!-- deck.goto snippet -->
+        <form action="." method="get" class="goto-form">
+            <label for="goto-slide">Go to slide:</label>
+            <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+            <datalist id="goto-datalist"></datalist>
+            <input type="submit" value="Go">
+        </form>
+
+        <!-- deck.hash snippet -->
+        <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+        <!-- End extension snippets. -->
+
+
+<!--
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+-->
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="deck.js/core/deck.core.js"></script>
+
+        <!-- Extension JS files. Add or remove as needed. -->
+        <script src="deck.js/extensions/hash/deck.hash.js"></script>
+        <script src="deck.js/extensions/menu/deck.menu.js"></script>
+        <script src="deck.js/extensions/goto/deck.goto.js"></script>
+        <script src="deck.js/extensions/status/deck.status.js"></script>
+        <script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+        <script src="deck.js/extensions/scale/deck.scale.js"></script>
+
+        <script src="js/highlight.pack.js"></script>
+
+        <script>
+            $(function() {
+                $.deck('.slide');
+            });
+            hljs.initHighlightingOnLoad();
+        </script>
+    </body>
+</html>
