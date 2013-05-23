@@ -33,15 +33,31 @@
 
 
 
-        <section class="slide">
+        <section class="slide" id="title">
             <h2>Eclipse</h2>
-            <b>Keyboard Shortcuts &amp; other Nice Things</b>
+            <strong>Code Manipulation, Keyboard Shortcuts &amp; other Nice Things</strong>
+
+            <div class="vcenter">
+                <keys>P + a + t + r + i + c + k</keys>
+                <keys>H + a + a + s</keys>
+            </div>
         </section>
 
-        <section class="slide">
+        <section class="slide" id="howto">
+            <h2>How to get the most out of Eclipse's shortcuts and source manipulation tools</h2>
+            <ol>
+                <li>Learn about Eclipse's capabilities (have a look at all of the slides)</li>
+                <li>When writing code, try to think in terms of the source and refactoring <em>primitives</em> offered
+                    by Eclipse</li>
+                <li>Let Eclipse write some of the code for you</li>
+                <li>Pay attention to the keyboard shortcuts of the actions that you find most useful</li>
+            </ol>
+        </section>
+
+        <section class="slide" id="new-project">
             <h2>Let's start..</h2>
             <ul>
-                <li>Create a new project (<code>Ctrl + N</code>)</li>
+                <li>Create a new project (<keys>Ctrl + N</keys>)</li>
                 <li>Type <code>java</code> into the filter</li>
                 <li>Select <b>Java Project</b></li>
                 <li>Give it a name...</li>
@@ -52,25 +68,24 @@
         <section class="slide" id="create-class">
             <h2>Create a class</h2>
             <ul>
-                <li>New File (<code>Ctrl+N</code>)</li>
+                <li>New File (<keys>Ctrl + N</keys>)</li>
                 <li>Type <code>class</code> and hit <b>Enter</b> (once or twice)</li>
                 <li>Give it a name.. say "Main"</li>
                 <li>Optionally: pick a package.
                     <ul>
-                        <li>Use the accessibility shortcuts to select the field: <code>alt + k</code></li>
-                        <li>Let's call it <Code>runner</Code></li>
+                        <li>Use the accessibility shortcuts to select the field: <keys>Alt + K</keys></li>
                     </ul>
                 </li>
-                <li><b>Enter</b> to close the dialog</li>
+                <li>Press <keys>Enter</keys> to close the dialog</li>
             </ul>
         </section>
 
         <section class="slide" id="generate-main">
             <h2>Generate a <code>main</code> method</h2>
             <ul>
-                <li>Position the cursor anywhere whithin the class</li>
+                <li>Position the cursor anywhere within the class</li>
                 <li>Type <code>main</code></li>
-                <li>Press <code>Ctrl+Space</code> to get suggestions</li>
+                <li>Press <keys>Ctrl + Space</keys> to get suggestions</li>
                 <li>Choose the <code>main method</code> template
                     <ul>
                         <li>Use the arrow keys to move between suggestions</li>
@@ -79,10 +94,10 @@
             </ul>
         </section>
 
-        <section class="slide" id="content-suggest">
-            <h2>Use basic content suggest (auto complete)</h2>
+        <section class="slide important" id="content-suggest">
+            <h2>Basic content suggest (auto complete)</h2>
             <ul>
-                <li>Press <code>Ctrl + Space</code> anywhere to get a list of variables, methods and other objects in your current scope</li>
+                <li>Press <keys>Ctrl + Space</keys> anywhere to get a list of variables, methods and other objects in your current scope</li>
                 <li>Eclipse recognizes upper-case letters as you type and matches it to variables, methods, classes, ...</li>
             </ul>
 
@@ -92,58 +107,104 @@
 }</code></pre>
 
             <ul>
-                <li>Type <code>System.out.println(fP</code> and press <code>Ctrl + Space</code></li>
+                <li>Type <code>System.out.println(fP</code> and press <keys>Ctrl + Space</keys></li>
                 <li><code>fP</code> completes as <code><strong>f</strong>irst<strong>P</strong>art</code></li>
                 <li><code>sP</code> completes as <code><strong>s</strong>econd<strong>P</strong>art</code></li>
                 <li><code>AIOOBE</code> completes as <code>ArrayIndexOutOfBoundsException</code> (really!)</li>
             </ul>
         </section>
 
-        <section class="slide" id="open-types-resources">
-            <h2>Opening Types and Resources</h2>
+        <section class="slide" id="word-completion">
+            <h2>Word Completion</h2>
             <ul>
-                <li>Eclipse knows two basic objects:
-                    <ul>
-                        <li><strong>Types</strong> - Basically Java classes, somewhere in your project, or in a
-                            <code>.jar</code> file on your project's build path. Find these with <code>Ctrl + Shift + T</code></li>
-                        <li><strong>Resources</strong> - Files within your project. This does not look insideof archives/jars.
-                            Find these with <code>Ctrl + Shift + R</code></li>
-                    </ul>
-                </li>
-
-                <h3>Examples</h3>
-                <ul>
-                    <li>A java class from the SDK: <code>Ctrl+Shift+T</code> and typing <code>FiInStr</code> matches the class <code>FileInputStream</code></li>
-                    <li>A file: <code>Ctrl+Shift+R</code> and typing <code>*.java</code> matches <code>Main.java</code></li>
-                </ul>
-
-                <b>Eclipse lets you mix upper &amp; lower case letters. You can only type the upper-case letters in
-                    the type that you're looking for or add lower-case letters as needed to limit the number of suggestions</b>
+                <li>Sometimes Eclipse can complete words even when there is not enough information about the
+                    context.</li>
+                <li>This can be handy when editing text files (especially html, xml) or when Eclipse can't
+                    figure out what you're looking for otherwise.</li>
+                <li>Type at least one character and press <keys>Alt + /</keys>. Press it again to get the
+                    next suggestion</li>
+                <li>Eclipse will find words with the same prefix in <strong>other opened Editors</strong>.</li>
             </ul>
         </section>
 
-        <section class="slide" id="launching">
+        <section class="slide important" id="open-types-resources">
+            <h2>Opening Types and Resources</h2>
+            <h3>Eclipse knows two basic objects</h3>
+            <ul>
+                <li><strong>Types</strong> - Basically Java classes, somewhere in your project, or in a
+                    <code>.jar</code> file on your project's build path. Find these with <keys>Ctrl + Shift + T</keys></li>
+                <li><strong>Resources</strong> - Files within your project. This does not look insideof archives/jars.
+                    Find these with <keys>Ctrl + Shift + R</keys></li>
+            </ul>
+
+            <h3>Examples</h3>
+            <ul>
+                <li>A java class from the SDK: <keys>Ctrl + Shift + T</keys> and typing <code>FiInStr</code> matches the class <code>FileInputStream</code></li>
+                <li>A file: <keys>Ctrl + Shift + R</keys> and typing <code>*.java</code> matches <code>Main.java</code></li>
+            </ul>
+
+            <b>Eclipse lets you mix upper &amp; lower case letters. You can only type the upper-case letters in
+                the type that you're looking for or add lower-case letters as needed to limit the number of suggestions</b>
+        </section>
+
+        <section class="slide important" id="find-declaration">
+            <h2>Open Declaration</h2>
+            <ul>
+                <li>The <strong>Open Declaration</strong> navigates to the selected <strong>Class</strong>,
+                    <strong>variable declaration</strong> or <strong>method definition</strong></li>
+                <li>There are many ways of triggering this action:
+                    <ul>
+                        <li>Press <keys>F3</keys></li>
+                        <li>Hold down <keys>Ctrl</keys> and <code>left click</code> on an element</li>
+                        <li>Right-click on an element and select <strong>Open Declaration</strong> from
+                            the context menu</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide important" id="quick-outline">
+            <h2>Quick Outline</h2>
+            <ul>
+                <li>Press <keys>Ctrl + O</keys> to view a <strong>quick outline</strong> of the class opened in the editor</li>
+                <li>While in the quick outline, <strong>type anything</strong> to filter the displayed items</li>
+            </ul>
+            <img src="img/quick-outline.gif" />
+        </section>
+
+
+        <section class="slide important" id="quick-type-hierarchy">
+            <h2>Quick Type Hierarchy</h2>
+            <ul>
+                <li>When working with <code>Interfaces</code> the <strong>Open Declaration</strong> action will
+                    go to the <code>Interface</code> definition.</li>
+                <li>To quickly find the <strong>implementation(s)</strong> of an <code>Interface</code> method, press
+                    <keys>Ctrl + T</keys></li>
+            </ul>
+            <img src="img/quick-type-hierarchy.gif" />
+        </section>
+        <section class="slide important" id="launching">
             <h2>Launching your application (or test)</h2>
 
             <ul>
                 <li>Right-click in the editor, select <code>Run As</code> then <code>Java Application</code>. This works if the file in the editor has a <code>main</code> method.</li>
-                <li>Without using the mouse: Press <code>Alt + Shift + X</code> to bring up the launch menu, then type <code>x</code> to choose <code>Java Application</code>.
+                <li>Without using the mouse: Press <keys>Alt + Shift + X</keys> to bring up the launch menu, then type <code>x</code> to choose <code>Java Application</code>.
                     <ul>
                         <li>No need to wait for the launch menu to show up.. Type as fast as you want!</li>
                     </ul>
                 </li>
                 <li>This also works for launching <code>JUnit Tests</code>: <code>Alt + Shift + X, T</code></li>
-                <li>Want to launch the app / test in <strong>Debug mode</strong>? Use <code>Alt + Shift + D</code> (<strong>D</strong>ebug) instead of <code>Alt + Shift + X</code> (E<strong>x</strong>ecute)</li>
+                <li>Want to launch the app / test in <strong>Debug mode</strong>? Use <keys>Alt + Shift + D</keys> (<strong>D</strong>ebug) instead of <keys>Alt + Shift + X</keys> (E<strong>x</strong>ecute)</li>
             </ul>
         </section>
 
-        <section class="slide" id="relaunching">
+        <section class="slide important" id="relaunching">
             <h2>Relaunching an application (or test)</h2>
 
             <ul>
                 <li>Need to rerun the last program or test?
                     <ul>
-                        <li><code>Ctrl + F11</code> to <strong>Run</strong></li>
+                        <li><keys>Ctrl + F11</keys> to <strong>Run</strong></li>
                         <li><code>F11</code> to <strong>Debug</strong></li>
                     </ul>
                 </li>
@@ -165,9 +226,9 @@
             <h2>Finding <em>any</em> action in Eclipse</h2>
             <ul>
                 <li>Using the menu to get to the preferences isn't fun.. but there's a shortcut!</li>
-                <li><code>Ctrl + 3</code> = <strong>Find Anything!</strong></li>
+                <li><keys>Ctrl + 3</keys> = <strong>Find Anything!</strong></li>
                 <li>Type the name of any <strong>action</strong>, <strong>dialog</strong>, <strong>view</strong>, <strong>perspective</strong>, <strong>preference</strong>, ...</li>
-                <li>For example: Press <code>Ctrl + 3</code> and type <code>Launching</code> to find the preferences pane used in the previous slide.</li>
+                <li>For example: Press <keys>Ctrl + 3</keys> and type <code>Launching</code> to find the preferences pane used in the previous slide.</li>
                 <li>Type <code>breakpoints</code> to open the breakpoints view</li>
                 <li>Type <code>debug</code> to find the Debug perspective</li>
 
@@ -175,10 +236,407 @@
 
         </section>
 
-        <section class="slide">
-            <h1>Here</h1>
+        <section class="slide important" id="structural-select">
+            <h2>Structural Select</h2>
+            <ul>
+                <li>Regular select: Hold <keys>Shift</keys> and move the cursor <keys>Left</keys>,<keys>Right</keys>, ...</li>
+                <li>Block / Structural select: Hold <keys>Alt + Shift</keys> and move the cursor <keys>Up</keys><keys>Left</keys><keys>Right</keys>or <keys>Down</keys></li>
+                <li>The exact selection depends on what's you'r  cursor is focused on..</li>
+            </ul>
         </section>
 
+        <section class="slide important" id="structural-select-2">
+            <h2>Structural Select: Demo</h2>
+            <img src="img/structural-select.gif" />
+        </section>
+
+        <section class="slide important" id="quick-fix-menu">
+            <h2>Quick Fix: Automatically modify source code</h2>
+            <ul>
+                <li>Eclipse has great support for automatically resolving compiler errors. Use this to your advantage!</li>
+                <li>Write code the way you <em>want</em> your classes to work and let Eclipse <em>make it so</em>.</li>
+                <li>Quick fixes can be selected via many "error" markers or by hovering over an error</li>
+                <li>Much faster: Press <keys>Ctrl + 1</keys>. Use this <strong>always</strong>!</li>
+            </ul>
+            <img src="img/quick-fix-fix-menu.png" />
+        </section>
+
+        <section class="slide" id="quick-fix-create-class">
+            <h2>Quick Fix: Create a Class</h2>
+            <ul>
+                <li>Type the name of a class that you'd like to create: <code>new MyClass();</code></li>
+                <li>Press <keys>Ctrl + 1</keys></li>
+                <li>Choose <code>Create Class</code></li>
+                <li>Change the package, superclass, implemented interfaces, ... as needed.</li>
+            </ul>
+<pre><code>package x.y.z;
+
+public class MyClass {
+
+}</code></pre>
+        </section>
+
+        <section class="slide important" id="quick-fix-assign-variable">
+            <h2>Quick Fix: Assign to Local Variable</h2>
+            <ul>
+                <li>Select any <code>value expression</code> (New class, non-void method, literal, ...) and press <keys>Ctrl + 1</keys></li>
+                <li>Select <code>Assign Statement to new local variable</code> or <code>Assign Statement to new field</code></li>
+                <li>Modify the variable name (or choose another suggestion with the up/down arrows) and press <code>Enter</code> to complete the action</li>
+            </ul>
+            <pre><code>new MyClass();</code></pre>
+            <pre><code>MyClass myClass = new MyClass();</code></pre>
+
+            <ul>
+                <li>Alternative shortcut: <keys>Ctrl + 2</keys> followed by <keys>L</keys> (local variable) or <keys>F</keys> (field)</li>
+            </ul>
+        </section>
+
+
+        <section class="slide" id="quick-fix-type">
+            <h2>Quick Fix: Correct type</h2>
+            <ul>
+                <li>When assigning variables, Eclipse can correct the "<em>left hand side</em>" of the assignment
+                    based on the type of the "<em>right hand side</em>"</li>
+                <li>On an invalid assignment or <code>return</code> statement, press <keys>Ctrl + 1</keys> and choose <strong>Change type of ...</strong></li>
+            </ul>
+<pre><code>void fixTypes() {
+    String s = <mark>3 + 4</mark>;
+    return <mark>s</mark>;
+}</code></pre>
+<pre><code>int fixTypes() {
+    int s = 3 + 4;
+    return s;
+}</code></pre>
+        </section>
+        <section class="slide important" id="quick-fix-add-method">
+            <h2>Quick Fix: Generate a method</h2>
+            <ul>
+                <li>Write method signature of a method that you'd like to create and press <keys>Ctrl + 1</keys></li>
+                <li>Select <code>Create method ...</code> from the Quick Fix menu and press <code>Enter</code></li>
+                <li>Pres <code>Tab</code> to cycle through the method signature parts and adjust them as needed</li>
+            </ul>
+
+<pre><code>MyClass mc = new MyClass();
+    mc.myFunction(1, "string", new Date());
+</code></pre>
+<pre><code>public class MyClass {
+    public void myFunction(int i, String string, Date date) {
+        // TODO Auto-generated method stub
+    }
+}</code></pre>
+        </section>
+
+
+        <section class="slide important" id="quick-fix-add-remove-parameter">
+            <h2>Quick Fix: Add or Remove a parameter of a method or constructor</h2>
+            <ul>
+                <li>Add or remove parameters when calling an existing method, then press <keys>Ctrl + 1</keys></li>
+                <li>Choose <code>Change method ...: Remove Parameter</code> or <code>Change method ...: Add Parameter</code> and press <code>Enter</code></li>
+                <li>When adding a parameter, edit the new parameter type and name</li>
+                <li>When removing a parameter, fix any compiler errors</li>
+            </ul>
+        </section>
+
+
+        <section class="slide" id="source-and-refactor-tools">
+            <h2>More source code manipulation: Source and Refactor tools</h2>
+            <ul>
+                <li>Eclipse has a wide range of sophisticated source code manipulation tools</li>
+                <li>Right click in the editor and choose the <code>Source</code> or <code>Refactor</code> submenus</li>
+                <li>Faster: <keys>Alt + Shift + S</keys> (source) and <keys>Alt + Shift + T</keys> (refactor)</li>
+            </ul>
+            <img src="img/source-refactor-menus.png" />
+        </section>
+
+        <section class="slide important" id="source-format">
+            <h2>Source: Format</h2>
+            <ul>
+                <li>Found in the <code>Source</code> menu or by pressing <keys>Ctrl + Shift + F</keys></li>
+                <li>"Fixes" the formatting, indentation, line breaks in the current file or selected region</li>
+                <li>Best to <strong>always</strong> or <strong>never</strong> use this on a whole file. Depending
+                on the formatting rules that are loaded and the length of the lines, things can look a little.. odd</li>
+                <li>Most useful when selecting specific sections (use the <a href="#structural-select">structural
+                    select</a> mode)</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="source-import">
+            <h2>Source: Add Import</h2>
+            <ul>
+                <li>Found in the <code>Source</code> menu or by pressing <keys>Ctrl + Shift + M</keys></li>
+                <li>Use this <strong>fully qualified class name</strong> or a <strong>static method</strong></li>
+                <li>Eclipse will add an <code>import</code> statement for the class or a <code>import static</code>
+                    statement for the method</li>
+            </ul>
+            <pre><code>java.util.Arrays.asList("Import","This");</code></pre>
+            <pre><code>import java.util.Arrays;
+    ...
+    Arrays.asList("Import","This");</code></pre>
+            <pre><code>import static java.util.Arrays.asList;
+    ...
+    asList("Import","This");
+            </code></pre>
+        </section>
+
+        <section class="slide important" id="source-organize-imports">
+            <h2>Source: Organize Imports</h2>
+            <ul>
+                <li>Found in the <code>Source</code> menu or by pressing <keys>Ctrl + Shift + O</keys></li>
+                <li>Organizes the import statements:
+                    <ul>
+                        <li>Remove any unused <code>import</code>s</li>
+                        <li>Add missing <code>import</code>s. Eclipse will prompt you if multiple classes
+                            with the same name are found</li>
+                        <li>Replace any <code>.*</code> imports with the classes actually used (up to a certain limit)</li>
+                        <li>Group all imports by the top level package and sort the import statements
+                            alphabetically</li>
+                    </ul>
+                </li>
+                <li>Use this <em>all the time</em>!</li>
+                <li>Eclipse can be configured to organize imports automatically on save:
+                    <ul>
+                        <li>Find the <code>Java / Editor / Save Actions</code> preference pane (<a href="#magic-find-anything"><keys>Ctrl + 3</keys></a>)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide important" id="source-generate-getters-setters">
+            <h2>Source: Generate Getters and Setters</h2>
+            <ul>
+                <li>Found in the <code>Source</code> menu or by pressing <keys>Alt + Shift + S</keys> then <keys>R</keys></li>
+                <li>Select the fields and accessor types desired (or <keys>Alt + A</keys> for all)</li>
+                <li>Modify the other options as needed (Tip: Set the <code>insertion point</code> to <code>last member</code>)</li>
+            </ul>
+
+<pre><code>public class MyClass {
+    private String a;
+    private boolean d;
+}</code></pre>
+<pre><code>public String getA() {
+        return a;
+    }
+    public void setA(String a) {
+        this.a = a;
+    }
+    public boolean isD() {
+        return d;
+    }
+    public void setD(boolean d) {
+        this.d = d;
+    }
+</code></pre>
+        </section>
+
+        <section class="slide" id="source-delegate">
+            <h2>Source: Generate Delegate Methods</h2>
+            <ul>
+                <li>Useful when writing a class that implements an <code>Interface</code> but wants to delegate
+                    to an (existing) implementation</li>
+                <li>Example: Your class implements <code>java.util.List</code> and uses a
+                    <code>java.util.ArrayList</code> internally.</li>
+                <li>Select <code>Generate Delegate Methods...</code> from the <code>Source</code> menu, pick
+                    the delegate object(s) which (missing) interface methods to delegate.</li>
+            </ul>
+
+<pre><code>public class MyList&lt;T&gt; implements List&lt;T&gt; {
+    private final List&lt;T&gt; delegate = new ArrayList&lt;T&gt;();
+}</code></pre>
+
+ <pre><code>    public boolean add(T e) { return delegate.add(e); }
+    public void clear() { delegate.clear(); }
+    public T get(int index) {return delegate.get(index);}</code></pre>
+
+            <em>This pattern should be avoided if possible, but this beats writing
+                the delegates by hand when absolutely needed..</em>
+        </section>
+
+
+        <section class="slide" id="source-generate-constructor">
+            <h2>Source: Generate Constructor using Fields...</h2>
+            <ul>
+                <li>Found in the <code>Source</code> menu or by pressing <keys>Alt + Shift + S</keys> then <keys>O</keys></li>
+                <li>Select the field(s) of the class to be initialized in the constructor</li>
+                <li>Optional: Change order of parameters, omit call to 'super()', or change the constructor visibility</li>
+            </ul>
+
+<pre><code>public class MyClass {
+    private String a;
+    private boolean d;
+}</code></pre>
+<pre><code>    public MyClass(String a, boolean d) {
+        super();
+        this.a = a;
+        this.d = d;
+    }</code></pre>
+        </section>
+
+        <section class="slide important" id="refactor-rename">
+            <h2>Refactor: Rename</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu or by pressing <keys>Alt + Shift + R</keys></li>
+                <li>Renames <code>Classes</code>, <code>Fields</code>, <code>Methods</code>, <code>Packages</code></li>
+                <li>Eclipse will find all references in this (and all linked) project and rename them as well!</li>
+                <li>Pressing <keys>Alt + Shift + R</keys> once lets you make the change "inline" in the editor.</li>
+                <li>Pressing it <strong>twice</strong> opens up the <code>Rename</code> dialog with advanced options.
+                    <ul>
+                        <li>Don't update references</li>
+                        <li>Rename Getter / Setter methods when renaming a field</li>
+                        <li>Generate new Getter / Setter methods, make old ones delegates</li>
+                        <li>Search for "text" matches (i.e. XML files) when renaming Classes</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide important" id="refactor-rename-demo">
+            <h2>Refactor: Rename Demo</h2>
+            <img src="img/rename-field.gif" />
+        </section>
+
+        <section class="slide" id="refactor-extract-interface">
+            <h2>Refactor: Extract Interface</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu</li>
+                <li>Creates an <code>Interface</code> containing one or more methods from the current <code>Class</code>
+                    and lets the class implement the interface.</li>
+            </ul>
+
+<pre><code>public class MyImpl {
+    public void methodA() { }
+    public int methodB(int a, int b) { return 0; }
+    public void methodC(String s) { }
+}</code></pre>
+
+<pre><code>public interface MyInterface {
+    void methodA();
+    int methodB(int a, int b);
+}</code></pre>
+
+        </section>
+
+        <section class="slide" id="refactor-move">
+            <h2>Refactor: Move</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu or by pressing <keys>Alt + Shift + V</keys></li>
+                <li>Moves <code>static</code> <strong>Fields</strong> and <strong>Methods</strong> to another <code>Class</code></li>
+                <li>Moves <strong>fields</strong> between <strong>Classes</strong> and <strong>Inner Classes</strong></li>
+                <li>"Textual Move" of fields to other classes</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="refactor-extract-superclass">
+            <h2>Refactor: Extract Superclass</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu</li>
+                <li>Move selected <strong>Fields</strong> and <strong>Methods</strong> to a new <code>Class</code>,
+                    make the current <code>Class</code> class <code>extend</code> the new class.</li>
+                <li>If the current <code>Class</code> already has a superclass, insert the new
+                    <code>Class</code> between the two</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="refactor-pull-up-down">
+            <h2>Refactor: Pull Up / Pull Down</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu</li>
+                <li>Move <strong>Fields</strong> and <strong>Methods</strong> to a super or subclass</li>
+                <li>Eclipse checks all dependencies of the moved elements and will offer to
+                    adjust the visibility or warn of potential problem created by the move</li>
+            </ul>
+        </section>
+
+        <section class="slide important" id="refactor-inline">
+            <h2>Refactor: Inline method or declaration</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu or by pressing <keys>Alt + Shift + I</keys></li>
+                <li>When used on a <strong>local variable</strong>, Eclipse will remote it and replace all uses with
+                    the assigned value.
+                    <ul><li>The variable must only be assigned to <em>once</em> to use this refactoring</li></ul>
+                </li>
+                <li>When used on a <strong>Method</strong>, Eclipse will insert the entire method body at the
+                    location(s) where the method is used.
+                    <ul><li>The method can then be removed</li></ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide important" id="refactor-extract-method">
+            <h2>Refactor: Extract method</h2>
+            <ul>
+                <li>Found in the <code>Refactor</code> menu or by pressing <keys>Alt + Shift + M</keys></li>
+                <li>Select one or more statements that can be turned into a method
+                    <ul>
+                        <li>The statements may have any number of inputs</li>
+                        <li>Only one variable outside of the selected line's scope may be assigned to (the
+                            generated <strong>method</strong> can only have a single return value</li>
+                        <li>Eclipse will find similar lines elsewhere in the class and will offer to <strong>replace all occurrences</strong></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <img src="img/extract-method.gif" />
+
+        </section>
+
+        <section class="slide" id="generate-loop">
+            <h2>Generate a <code>for</code> loop</h2>
+            <ul>
+                <li>Type <code>for</code> or <code>foreach</code> and press <keys>Ctrl + Space</keys></li>
+                <li>Choose the loop template, then fill in the required parts (press <keys>Tab</keys> to cycle through
+                    the template fields</li>
+                <li>Alternative way of writing a <code>foreach</code> loop:
+                    <ul>
+                        <li>Type <code>for (x x : items)</code></li>
+                        <li>With the focus still on <code>items</code>, press <keys>Ctrl + 1</keys>
+                            and let Eclipse correct the type of 'x' (Change type of 'x' to 'String')</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide important" id="find-and-incremental-find">
+            <h2>Find / Incremental Find</h2>
+            <ul>
+                <li>Eclipse has a standard <strong>Find</strong> and <strong>Replace</strong> feature: <keys>Ctrl + F</keys>
+                <ul><li>Regular Expression support</li>
+                    <li>Scope: Search / Replace in the whole file, or only in the selected lines</li></ul>
+                <li>Sometimes the search dialog gets in the way and the <strong>incremental find</strong> is more useful
+                    <ul>
+                        <li>Press <keys>Ctrl +J</keys> and start typing</li>
+                        <li>Watch the bottom status bar to see what you've typed so far</li>
+                        <li>Get immediate feedback (found, not found) in the status bar</li>
+                        <li>Use the <keys>Up</keys> and <keys>Down</keys> arrows to search <strong>backward</strong>
+                            and <strong>forward</strong></li>
+                        <li>Press <keys>Esc</keys> to exit from the <strong>incremental find</strong> mode</li>
+                        <li>Press <keys>Ctrl + J</keys> twice to run the last search again</li>
+                        <li>The search is <strong>case-insensitive</strong> if you only use lower-case letters.
+                        Typing any upper-case letter will make it <strong>case-sensitive</strong></li>
+
+                    </ul>
+                </li>
+            </li>
+
+            </ul>
+        </section>
+
+        <section class="slide" id="move-delete-lines">
+            <h2>Move or Delete lines</h2>
+            <ul>
+                <li><keys>Ctrl + D</keys> deletes the currently selected line(s)</li>
+                <li><keys>Alt + Up</keys> and <keys>Alt + Down</keys> move the selected lines up and down</li>
+                <li>Very simple features, but incredibly handy!</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="customize-shortcuts">
+            <h2>Browse and customize shortcuts</h2>
+            <ul>
+                <li>All of the available actions and keyboard bindings can be customized in the preferences panel</li>
+                <li>Preferences: General -&gt; Keys</li>
+            </ul>
+            <img src="img/keys-preferences.png"/>
+        </section>
 
         <!-- Begin extension snippets. Add or remove as needed. -->
 

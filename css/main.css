@@ -94,8 +94,25 @@ textarea {
    ========================================================================== */
 
 
+keys {
+    font-family:monospace, sans-serif;
+}
+
+key {
+    border: solid #888 2px;
+    border-radius: 4px;
+    padding: 1px 10px;
+}
 
 
+.important h2:before {
+    background-image: url('../img/star.png');
+    background-size: contain;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    content: '';
+}
 
 
 
