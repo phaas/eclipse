@@ -626,8 +626,21 @@ public class MyClass {
             <ul>
                 <li><keys>Ctrl + D</keys> deletes the currently selected line(s)</li>
                 <li><keys>Alt + Up</keys> and <keys>Alt + Down</keys> move the selected lines up and down</li>
+                <li><keys>Ctrl + Alt + Up</keys> and <keys>Ctrl + Alt + Down</keys> duplicates the current line (above or below)</li>
                 <li>Very simple features, but incredibly handy!</li>
+                <li>Great when you have copied something and still need to paste it. This doesn't clear the clipboard</li>
             </ul>
+        </section>
+
+        <section class="slide" id="templates">
+            <h2>Code Templates</h2>
+            <ul>
+                <li><strong>Preferences</strong>: Java -&gt; Editor -&gt; Templates</li>
+                <li>Check out the existing templates</li>
+                <li>Define your own code templates for commonly typed constructs</li>
+            </ul>
+<pre><code>${imp:import(org.slf4j.Logger,org.slf4j.LoggerFactory)}
+    private static final Logger logger = LoggerFactory.getLogger(${enclosing_type}.class);</code></pre>
         </section>
 
         <section class="slide" id="customize-shortcuts">
